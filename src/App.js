@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Home from './Components/Home/home.js';
+import Home from 'Components/Home/home.js';
 import Form from './Components/Form/form.js';
-import Display from './Components/Display/display.js';
+import Display from 'Components/Display/display.js';
 import Chat from './Components/ChatDiscussion/chat.js';
 import {
   BrowserRouter as Router,
@@ -23,7 +23,7 @@ function App() {
         </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-link active">
+              <li class="nav-link">
               <Link to="/recipes"> Recipes</Link>
               </li>
               <li class="nav-link">
@@ -45,7 +45,7 @@ function App() {
           <Route path="/recipes">
             <Display/>
           </Route>
-          <Route path="/form">
+          <Route path="/addrecipe">
             <Form/>
           </Route>
           <Route path="/chat">
