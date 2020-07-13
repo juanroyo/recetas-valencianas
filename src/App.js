@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import Home from 'Components/Home/home.js';
-import Form from './Components/Form/form.js';
+import Form from 'Components/Form/form.js';
 import Display from 'Components/Display/display.js';
-import Chat from './Components/ChatDiscussion/chat.js';
+import Chat from 'Components/ChatDiscussion/chat.js';
+import Join from 'Components/Join/join.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,7 +31,7 @@ function App() {
               <Link to="/addrecipe"> Add Your Recipe </Link>
               </li>
               <li class="nav-link">
-              <Link to="/chat"> Chat </Link>
+              <Link to="/join"> Join the chat </Link>
               </li>
             </ul>
 
@@ -42,15 +43,14 @@ function App() {
           {/*  <Route path="">
               <Home/>
             </Route>*/}
-          <Route path="/recipes">
-            <Display/>
-          </Route>
-          <Route path="/addrecipe">
-            <Form/>
-          </Route>
-          <Route path="/chat">
-            <Chat/>
-          </Route>
+          <Route path="/recipes" component={Display} />
+
+          <Route path="/addrecipe" component={Form}/>
+
+          <Route path="/chat" component={Chat}/>
+
+          <Route path="/join" exact component={Join} />
+
         </Switch>
 </div>
 </Router>
